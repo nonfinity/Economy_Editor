@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tests/Control.gd" type="Script" id=1]
+
+[node name="Control" type="GraphEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gn01" type="GraphNode" parent="."]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 175.0
+margin_bottom = 175.0
+mouse_filter = 1
+offset = Vector2( 100, 100 )
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="gn01"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 59.0
+margin_bottom = 38.0
+
+[node name="gn02" type="GraphNode" parent="."]
+margin_left = 200.0
+margin_top = 200.0
+margin_right = 275.0
+margin_bottom = 275.0
+mouse_filter = 1
+offset = Vector2( 200, 200 )
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="gn02"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 59.0
+margin_bottom = 38.0
+
+[node name="gn03" type="GraphNode" parent="."]
+margin_left = 300.0
+margin_top = 200.0
+margin_right = 375.0
+margin_bottom = 275.0
+mouse_filter = 1
+offset = Vector2( 300, 200 )
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="gn03"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 59.0
+margin_bottom = 38.0
+
+[node name="gn04" type="GraphNode" parent="."]
+margin_left = 400.0
+margin_top = 100.0
+margin_right = 475.0
+margin_bottom = 175.0
+mouse_filter = 1
+offset = Vector2( 400, 100 )
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="gn04"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 59.0
+margin_bottom = 38.0
+
+[connection signal="connection_request" from="." to="." method="_on_Control_connection_request"]

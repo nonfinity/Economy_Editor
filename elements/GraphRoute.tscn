@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/GraphRoute.gd" type="Script" id=1]
+[ext_resource path="res://themes/route_invalid.tres" type="StyleBox" id=2]
+
+[node name="GraphRoute" type="GraphNode"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/frame = ExtResource( 2 )
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 0.580392, 0.129412, 0.129412, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 0.580392, 0.129412, 0.129412, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 19.0

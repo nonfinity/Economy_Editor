@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/SideBar.gd" type="Script" id=1]
+[ext_resource path="res://elements/GoodsPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://elements/Inspector.tscn" type="PackedScene" id=3]
+
+[node name="SideBar" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -724.0
+margin_bottom = -185.0
+rect_min_size = Vector2( 300, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 293.0
+margin_bottom = 408.0
+
+[node name="Current" type="ScrollContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Inspector" parent="TabContainer/Current" instance=ExtResource( 3 )]
+margin_bottom = 365.0
+
+[node name="GoodsPanel" parent="TabContainer" instance=ExtResource( 2 )]
+visible = false
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[connection signal="inspector_edited" from="TabContainer/Current/Inspector" to="." method="_on_Inspector_inspector_edited"]
+[connection signal="good_edited" from="TabContainer/GoodsPanel" to="." method="_on_GoodsPanel_good_edited"]
+[connection signal="new_good_pressed" from="TabContainer/GoodsPanel" to="." method="_on_GoodsPanel_new_good_pressed"]

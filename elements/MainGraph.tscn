@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/GraphEdit.gd" type="Script" id=2]
+
+[node name="MainGraph" type="GraphEdit"]
+margin_right = 724.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+right_disconnects = true
+scroll_offset = Vector2( -152.4, -217 )
+zoom = 0.8
+minimap_enabled = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="_end_node_move" from="." to="." method="_on_MainGraph__end_node_move"]

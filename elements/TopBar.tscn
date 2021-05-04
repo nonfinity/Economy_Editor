@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://elements/NewButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://elements/ZoomInput.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/TopBar.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[node name="TopBar" type="PanelContainer"]
+margin_right = 1024.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+custom_constants/separation = 5
+
+[node name="Neighbor" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 82.0
+margin_bottom = 30.0
+text = "+ Neighbor"
+
+[node name="Zoom" parent="HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 87.0
+margin_right = 230.0
+margin_bottom = 30.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="ShipTest" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 235.0
+margin_right = 310.0
+margin_bottom = 30.0
+focus_mode = 2
+text = "ShipTest"
+
+[node name="SaveButton" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 315.0
+margin_right = 390.0
+margin_bottom = 30.0
+focus_mode = 2
+text = "Save Map"
+
+[node name="LoadButton" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 395.0
+margin_right = 470.0
+margin_bottom = 30.0
+focus_mode = 2
+text = "Load Map"
+
+[connection signal="pressed" from="HBoxContainer/Neighbor" to="." method="_on_Neighbor_pressed"]
+[connection signal="zoom_changed" from="HBoxContainer/Zoom" to="." method="_on_Zoom_zoom_changed"]
+[connection signal="pressed" from="HBoxContainer/ShipTest" to="." method="_on_ShipTest_pressed"]
+[connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/LoadButton" to="." method="_on_LoadButton_pressed"]
